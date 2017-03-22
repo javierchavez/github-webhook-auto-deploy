@@ -11,11 +11,11 @@ This is a all in one package that is hopefully just drops in.
 
 ## Configuring Files
 
-`deploy.service` Used to create a service that spawns uwsgi and sets paths for python binaries.
+`webhook-app.service` Used to create a service that spawns uwsgi and sets paths for python binaries.
 
-`deploy.ini` config of actual uwsgi instance. Secret key is set here.
+`webhook-deploy-app/webhook-deploy-app.ini` config of actual uwsgi instance. Secret key is set here.
 
-`deploy` config of nginx. Note all requests are blocked except POST.
+`nginx/webhook-deploy-app` config of nginx. Note all requests are blocked except POST.
 
 
 ## Usefull commands
@@ -23,7 +23,7 @@ This is a all in one package that is hopefully just drops in.
 
 sudo systemctl restart nginx.service
 sudo systemctl restart uwsgi.service
-sudo systemctl restart deploy.service 
+sudo systemctl restart webhook-deploy-app.service 
 
 
 ## Install
@@ -35,7 +35,7 @@ sudo systemctl restart deploy.service
 5. sudo ufw allow 'Nginx Full'
 
 
-sudo ln -s /etc/nginx/sites-available/deploy /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/webhook-deploy-app /etc/nginx/sites-enabled
 
 
 ---
