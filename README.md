@@ -12,7 +12,9 @@ This is a all in one package that is hopefully just drops in.
 ## Configuring Files
 
 `deploy.service` Used to create a service that spawns uwsgi and sets paths for python binaries.
+
 `deploy.ini` config of actual uwsgi instance. Secret key is set here.
+
 `deploy` config of nginx. Note all requests are blocked except POST.
 
 
@@ -34,3 +36,7 @@ sudo systemctl restart deploy.service
 
 
 sudo ln -s /etc/nginx/sites-available/deploy /etc/nginx/sites-enabled
+
+
+---
+Author: Javier C
