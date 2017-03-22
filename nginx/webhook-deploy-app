@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    server_name replace_this;
+    location /deploy {
+        limit_except POST {
+            deny all;
+        }
+        include uwsgi_params;
+        uwsgi_pass unix:/home/username/webhook-deploy-app/webhook-deploy-app.sock;
+    }
+}
+

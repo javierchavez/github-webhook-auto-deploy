@@ -1,0 +1,17 @@
+[Unit]
+Description=uWSGI instance for webhooks
+After=network.target
+
+[Service]
+User=username
+Group=www-data
+# Directory of app.py
+WorkingDirectory=/home/username/webhook-deploy-app
+# Add the python bin directory to this path (context of this service)
+Environment="PATH=/home/username/venvs/webhook-deploy-app/bin"
+# Call this command when this starts
+ExecStart=/home/username/venvs/webhook-deploy-app/bin/uwsgi --ini webhook-deploy-app.ini
+
+[Install]
+WantedBy=multi-user.target
+
