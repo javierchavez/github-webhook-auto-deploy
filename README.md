@@ -4,16 +4,16 @@ This is a all in one package that is hopefully just drops in.
 
 ## Dependencies
 
-* python 3
+* python 3 - use of hash functions that are specific to python 3
 * nginx
-* uwsgi
-* ubuntu 16.04
+* uwsgi (python)
+* ubuntu 16.04 - configuration will only work for 16.04
 
-## Files
+## Configuring Files
 
-`deploy.service` 
-`deploy.ini`
-`deploy`
+`deploy.service` Used to create a service that spawns uwsgi and sets paths for python binaries.
+`deploy.ini` config of actual uwsgi instance. Secret key is set here.
+`deploy` config of nginx. Note all requests are blocked except POST.
 
 
 ## Usefull commands
